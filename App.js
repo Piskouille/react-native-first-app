@@ -1,24 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import FilmList from './Components/FilmList';
-import Search from './Components/Search';
+import React from 'react'
+import Navigation from './Navigation/Navigation'
+import Main from './Vues/Main'
 
-export default function App() {
-
+function App() {
   return (
-    <View style={styles.view}>
-      <StatusBar/>
-      <Search/>
-      <FilmList/>
-    </View>
-  );
+    <Main/>
+  )
 }
 
-const styles = StyleSheet.create({
-  view: {
-    flex: 1,  
-    paddingTop: 25,
-    backgroundColor: '#C4E9DE'
-  }
-})
+export default App

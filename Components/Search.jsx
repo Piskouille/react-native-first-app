@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Button, StyleSheet, TextInput } from 'react-native'
 
-function Search() {
+function Search({setSearch}){
+    
+    const textRef = useRef()
+
     return (
         <>
             <TextInput 
                 style={styles.textInput}
-                placeholder='Titre du film'/>
-            <Button title='Rechercher' onPress={() => {}}/>
+                placeholder='Titre du film'
+                ref={textRef}
+                onChangeText={text => textRef.current.value = text}
+                onSubmitEditing={() => setSearch(state => textRef.current.value)} //validation du champ au clavier
+            />
+            <Button title='Rechercher' onPress={() => setSearch(state => textRef.current.value)}/>
         </>
     )
 }
